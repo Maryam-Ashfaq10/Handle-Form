@@ -9,7 +9,7 @@ interface formState {
     }
 }
 
-const Forms = () => {
+const Forms = (): React.ReactNode => {
     const [state, setState] = useState<formState>({
         user: {
             username: '',
@@ -19,13 +19,13 @@ const Forms = () => {
         }
     })
 
-    const handleChange = (e): void => {
-       // console.log(state.user.username)
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
        setState({
         user:{
-            ...state.user, [e.target.name] : [e.target.value]
+            ...state.user, [e.target.name] : e.target.value
         }
        })
+       console.log(JSON.stringify(state.user))
     }
 
     return (
@@ -37,8 +37,8 @@ const Forms = () => {
                 email:    <input style={{ margin: '5px' }} type="text" value={state.user.email} onChange={handleChange} name="email" id="email" /> <br />
                 password: <input type="password" value={state.user.password} onChange={handleChange} name="password" id="password" /><br />
                 phone number: <input style={{ margin: '5px' }} type="text" value={state.user.phone} onChange={handleChange} name="phone" id="phone" />
-
-
+ 
+               <button type="submit">submit</button>
             </form>
         </>
     )
