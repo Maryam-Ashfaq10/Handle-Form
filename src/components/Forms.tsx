@@ -38,18 +38,23 @@ const Forms = (): React.ReactNode => {
     return (
         <>
             <h1>LOGIN FORM</h1>
-            <form onSubmit={handleForm}>
+            <form>
+            <div className="mb-3 p-2">
+                    <label htmlFor="exampleInputName" className="form-label">User Name</label>
+                    <input type="text" className="form-control" id="exampleInputName" />
+                </div>
 
-                username:
-                <input type="text" value={state.user.username} onChange={handleChange} name="username" id="name" /> <br />
-                email:
-                <input style={{ margin: '5px' }} type="text" value={state.user.email} onChange={handleChange} name="email" id="email" /> <br />
-                password:
-                <input type="password" value={state.user.password} onChange={handleChange} name="password" id="password" /><br />
-                phone number:
-                <input style={{ margin: '5px' }} type="text" value={state.user.phone} onChange={handleChange} name="phone" id="phone" />
+                <div className="mb-3 p-2">
+                    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                    <input type="email" className="form-control" id="exampleInputEmail1" />
+                </div>
 
-                <button type="submit" onClick={handleInput}>submit</button>
+                <div className="mb-3 p-2">
+                    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                </div>
+               
+                <button type="submit" className="btn btn-primary m-3">Submit</button>
             </form>
         </>
     )

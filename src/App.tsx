@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 
 import Forms from './components/Forms'
 
